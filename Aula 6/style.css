@@ -1,0 +1,17 @@
+body{
+    margin: 10px 100px;
+    display: flex;
+    flex-direction: column;
+}
+p{
+    width: 600px;
+    font-size: 18px;
+}
+div.grey{
+    background-color: grey;
+}
+div#right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
