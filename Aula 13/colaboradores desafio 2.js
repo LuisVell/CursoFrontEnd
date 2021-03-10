@@ -43,7 +43,7 @@ const resp1b = colaboradores.reduce((acc, colab) =>{
     'front-end': 0,
     'back-end': 0,
     'designer': 0,
-    'estagiario': 0,
+    'estagiario': 0    
 })
 
 console.log("Resposta 01b", resp1b);
