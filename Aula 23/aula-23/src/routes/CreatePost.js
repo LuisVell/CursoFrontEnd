@@ -1,4 +1,5 @@
 // Prof. Erico utilizei o repositorio do Gabriel Ribeiro pra me guiar nesse desafio
+// updt: Não funciona o tratamento de erro
 
 import {useEffect, useState} from "react"
 import axios from "axios"
@@ -15,22 +16,22 @@ const CreatePost=()=>{
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             body: JSON.stringify({
-            title: props.title,
-            body: props.body,
-            userId: props.userId,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-  .then(function (response) {
-    console.log(response);
-    return toast.success("Postado com sucesso!!")
-  })
-  .catch(function (error) {
-    console.log(error);
-    return toast.error("Algo deu errado!")
-  })
+                title: props.title,
+                body: props.body,
+                userId: props.userId,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(function (response) {
+            console.log(response);
+            return toast.success("Postado com sucesso!!")
+        })
+        .catch(function (error) {
+            console.log(error);
+            return toast.error("Algo deu errado!")
+        })
     } 
 
     useEffect(()=>{
