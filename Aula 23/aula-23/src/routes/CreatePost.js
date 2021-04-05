@@ -1,5 +1,5 @@
 // Prof. Erico utilizei o repositorio do Gabriel Ribeiro pra me guiar nesse desafio
-// updt: Não funciona o tratamento de erro
+//AULA 23 COMMIT CORRETO: Prof. dessa vez o tratamento de erro está acontecendo corretamente
 
 import {useEffect, useState} from "react"
 import axios from "axios"
@@ -12,27 +12,18 @@ const CreatePost=()=>{
     const [posts, setPost] = useState([])
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = (props) =>{
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: props.title,
-                body: props.body,
-                userId: props.userId,
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
+    const onSubmit = async (props) =>{
+        props.userId = Number(props.userId)
+        axios.post('https://jsonplaceholder.typicodse.com/posts', props)
         .then(function (response) {
             console.log(response);
-            return toast.success("Postado com sucesso!!")
+            toast.success("Postado com sucesso!!")
         })
         .catch(function (error) {
             console.log(error);
-            return toast.error("Algo deu errado!")
-        })
-    } 
+            toast.error("Algo deu errado!")
+        }) 
+    }
 
     useEffect(()=>{
         const getPost = async () =>{
