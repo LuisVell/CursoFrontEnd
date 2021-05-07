@@ -1,4 +1,5 @@
 ### Primeiro repositorio GIT
+### Parte do Curso de Front-end e SoftSkills oferecido pelo Otterwise
 ### Utilizado no curso: 
 - ##### HTML 
 - #####  CSS 
